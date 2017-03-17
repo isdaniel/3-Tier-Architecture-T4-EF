@@ -8,11 +8,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{313F2425-1D95-4E26-8C42-9AB424FFC8F7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service", "Service", "{B06AFDC5-5D75-41FD-ABF4-E5CDBE240099}"
-	ProjectSection(SolutionItems) = preProject
-		IBLL\IBLLSession.cs = IBLL\IBLLSession.cs
-		IBLL\IBLLSessionExt.cs = IBLL\IBLLSessionExt.cs
-		IBLL\IBLLSessionExt.tt = IBLL\IBLLSessionExt.tt
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repository", "Repository", "{4778FA3C-E7F8-42F5-BA91-74EAD88DF7FC}"
 EndProject
