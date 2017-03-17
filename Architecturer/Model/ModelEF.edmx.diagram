@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0578362864a046deb4d7a24e79865692" Name="Diagram1">
+        <EntityTypeShape EntityType="Department.Active_Record" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Department.Active_Record_Items" Width="1.5" PointX="7.5" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Department.Active_Rule" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Department.Active_Type" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="Department.Library_Book" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Department.Library_BookImgae" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Department.Login_Log" Width="1.5" PointX="5.75" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Department.Login_User" Width="1.5" PointX="7.75" PointY="4.625" IsExpanded="true" />
+        <AssociationConnector Association="Department.FK_Active_Record_Items_Active_Record" ManuallyRouted="false" />
+        <AssociationConnector Association="Department.FK_ActiveRecord_ActiveRule" ManuallyRouted="false" />
+        <AssociationConnector Association="Department.FK_ActiveRule_ActiveType" ManuallyRouted="false" />
+        <AssociationConnector Association="Department.FK_Library_BookImgae_Library_Book" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Department.parameter" Width="1.5" PointX="10" PointY="3.375" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

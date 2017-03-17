@@ -1,0 +1,484 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Department.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Active_Record">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ActiveID" Type="int" Nullable="false" />
+          <Property Name="Record_Information" Type="nvarchar" MaxLength="50" />
+          <Property Name="Record_Money" Type="int" Nullable="false" />
+          <Property Name="Record_Date" Type="datetime" Nullable="false" />
+          <Property Name="Statue" Type="int" Nullable="false" />
+          <Property Name="Modify_Date" Type="datetime" />
+          <Property Name="Account" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Active_Record_Items">
+          <Key>
+            <PropertyRef Name="DetailsID" />
+          </Key>
+          <Property Name="DetailsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RecordID" Type="int" Nullable="false" />
+          <Property Name="Item_Detail_1" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Item_Detail_2" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Active_Rule">
+          <Key>
+            <PropertyRef Name="ActiveID" />
+          </Key>
+          <Property Name="ActiveID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Active_Type_ID" Type="int" Nullable="false" />
+          <Property Name="Active_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Active_Description" Type="nvarchar" MaxLength="50" />
+          <Property Name="Active_Condition" Type="nvarchar" MaxLength="50" />
+          <Property Name="Amount" Type="int" Nullable="false" />
+          <Property Name="Gift" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+          <Property Name="Quantity_Total" Type="int" Nullable="false" />
+          <Property Name="Quantity_Remaining" Type="int" Nullable="false" />
+          <Property Name="Start_Date" Type="datetime" Nullable="false" />
+          <Property Name="End_Date" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Active_Type">
+          <Key>
+            <PropertyRef Name="Active_Type_ID" />
+          </Key>
+          <Property Name="Active_Type_ID" Type="int" Nullable="false" />
+          <Property Name="Active_Type_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Library_Book">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BookLanguage" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="bookName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="BookType" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="create_time" Type="datetime" />
+          <Property Name="summary" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Library_BookImgae">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BookId" Type="int" Nullable="false" />
+          <Property Name="Image_Date" Type="datetime" />
+          <Property Name="Image_Path" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Login_Log">
+          <Key>
+            <PropertyRef Name="Rowid" />
+          </Key>
+          <Property Name="Rowid" Type="int" Nullable="false" />
+          <Property Name="LoginTime" Type="date" Nullable="false" />
+          <Property Name="User_Rowid" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Login_User">
+          <Key>
+            <PropertyRef Name="Rowid" />
+          </Key>
+          <Property Name="Rowid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Username" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Password" Type="varchar(max)" Nullable="false" />
+          <Property Name="LastLoginTime" Type="date" />
+        </EntityType>
+        <EntityType Name="parameter">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="chinese" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="English" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="parametertype" Type="nvarchar(max)" />
+        </EntityType>
+        <Association Name="FK_Active_Record_Items_Active_Record">
+          <End Role="Active_Record" Type="Self.Active_Record" Multiplicity="1" />
+          <End Role="Active_Record_Items" Type="Self.Active_Record_Items" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Active_Record">
+              <PropertyRef Name="RecordID" />
+            </Principal>
+            <Dependent Role="Active_Record_Items">
+              <PropertyRef Name="RecordID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ActiveRecord_ActiveRule">
+          <End Role="Active_Rule" Type="Self.Active_Rule" Multiplicity="1" />
+          <End Role="Active_Record" Type="Self.Active_Record" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Active_Rule">
+              <PropertyRef Name="ActiveID" />
+            </Principal>
+            <Dependent Role="Active_Record">
+              <PropertyRef Name="ActiveID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ActiveRule_ActiveType">
+          <End Role="Active_Type" Type="Self.Active_Type" Multiplicity="1" />
+          <End Role="Active_Rule" Type="Self.Active_Rule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Active_Type">
+              <PropertyRef Name="Active_Type_ID" />
+            </Principal>
+            <Dependent Role="Active_Rule">
+              <PropertyRef Name="Active_Type_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Library_BookImgae_Library_Book">
+          <End Role="Library_Book" Type="Self.Library_Book" Multiplicity="1" />
+          <End Role="Library_BookImgae" Type="Self.Library_BookImgae" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Library_Book">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Library_BookImgae">
+              <PropertyRef Name="BookId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DepartmentStoreContainer">
+          <EntitySet Name="Active_Record" EntityType="Self.Active_Record" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Active_Record_Items" EntityType="Self.Active_Record_Items" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Active_Rule" EntityType="Self.Active_Rule" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Active_Type" EntityType="Self.Active_Type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Library_Book" EntityType="Self.Library_Book" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Library_BookImgae" EntityType="Self.Library_BookImgae" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Login_Log" EntityType="Self.Login_Log" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Login_User" EntityType="Self.Login_User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="parameter" EntityType="Self.parameter" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Active_Record_Items_Active_Record" Association="Self.FK_Active_Record_Items_Active_Record">
+            <End Role="Active_Record" EntitySet="Active_Record" />
+            <End Role="Active_Record_Items" EntitySet="Active_Record_Items" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ActiveRecord_ActiveRule" Association="Self.FK_ActiveRecord_ActiveRule">
+            <End Role="Active_Rule" EntitySet="Active_Rule" />
+            <End Role="Active_Record" EntitySet="Active_Record" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ActiveRule_ActiveType" Association="Self.FK_ActiveRule_ActiveType">
+            <End Role="Active_Type" EntitySet="Active_Type" />
+            <End Role="Active_Rule" EntitySet="Active_Rule" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Library_BookImgae_Library_Book" Association="Self.FK_Library_BookImgae_Library_Book">
+            <End Role="Library_Book" EntitySet="Library_Book" />
+            <End Role="Library_BookImgae" EntitySet="Library_BookImgae" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Department" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Active_Record">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ActiveID" Type="Int32" Nullable="false" />
+          <Property Name="Record_Information" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Record_Money" Type="Int32" Nullable="false" />
+          <Property Name="Record_Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Statue" Type="Int32" Nullable="false" />
+          <Property Name="Modify_Date" Type="DateTime" Precision="3" />
+          <Property Name="Account" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Active_Record_Items" Relationship="Self.FK_Active_Record_Items_Active_Record" FromRole="Active_Record" ToRole="Active_Record_Items" />
+          <NavigationProperty Name="Active_Rule" Relationship="Self.FK_ActiveRecord_ActiveRule" FromRole="Active_Record" ToRole="Active_Rule" />
+        </EntityType>
+        <EntityType Name="Active_Record_Items">
+          <Key>
+            <PropertyRef Name="DetailsID" />
+          </Key>
+          <Property Name="DetailsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RecordID" Type="Int32" Nullable="false" />
+          <Property Name="Item_Detail_1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Item_Detail_2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Active_Record" Relationship="Self.FK_Active_Record_Items_Active_Record" FromRole="Active_Record_Items" ToRole="Active_Record" />
+        </EntityType>
+        <EntityType Name="Active_Rule">
+          <Key>
+            <PropertyRef Name="ActiveID" />
+          </Key>
+          <Property Name="ActiveID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Active_Type_ID" Type="Int32" Nullable="false" />
+          <Property Name="Active_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Active_Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Active_Condition" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Amount" Type="Int32" Nullable="false" />
+          <Property Name="Gift" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <Property Name="Quantity_Total" Type="Int32" Nullable="false" />
+          <Property Name="Quantity_Remaining" Type="Int32" Nullable="false" />
+          <Property Name="Start_Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="End_Date" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Active_Record" Relationship="Self.FK_ActiveRecord_ActiveRule" FromRole="Active_Rule" ToRole="Active_Record" />
+          <NavigationProperty Name="Active_Type" Relationship="Self.FK_ActiveRule_ActiveType" FromRole="Active_Rule" ToRole="Active_Type" />
+        </EntityType>
+        <EntityType Name="Active_Type">
+          <Key>
+            <PropertyRef Name="Active_Type_ID" />
+          </Key>
+          <Property Name="Active_Type_ID" Type="Int32" Nullable="false" />
+          <Property Name="Active_Type_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Active_Rule" Relationship="Self.FK_ActiveRule_ActiveType" FromRole="Active_Type" ToRole="Active_Rule" />
+        </EntityType>
+        <EntityType Name="Library_Book">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BookLanguage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="bookName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BookType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="create_time" Type="DateTime" Precision="3" />
+          <Property Name="summary" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Library_BookImgae" Relationship="Self.FK_Library_BookImgae_Library_Book" FromRole="Library_Book" ToRole="Library_BookImgae" />
+        </EntityType>
+        <EntityType Name="Library_BookImgae">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BookId" Type="Int32" Nullable="false" />
+          <Property Name="Image_Date" Type="DateTime" Precision="3" />
+          <Property Name="Image_Path" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Library_Book" Relationship="Self.FK_Library_BookImgae_Library_Book" FromRole="Library_BookImgae" ToRole="Library_Book" />
+        </EntityType>
+        <EntityType Name="Login_Log">
+          <Key>
+            <PropertyRef Name="Rowid" />
+          </Key>
+          <Property Name="Rowid" Type="Int32" Nullable="false" />
+          <Property Name="LoginTime" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="User_Rowid" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Login_User">
+          <Key>
+            <PropertyRef Name="Rowid" />
+          </Key>
+          <Property Name="Rowid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LastLoginTime" Type="DateTime" Precision="0" />
+        </EntityType>
+        <Association Name="FK_Active_Record_Items_Active_Record">
+          <End Role="Active_Record" Type="Self.Active_Record" Multiplicity="1" />
+          <End Role="Active_Record_Items" Type="Self.Active_Record_Items" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Active_Record">
+              <PropertyRef Name="RecordID" />
+            </Principal>
+            <Dependent Role="Active_Record_Items">
+              <PropertyRef Name="RecordID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ActiveRecord_ActiveRule">
+          <End Role="Active_Rule" Type="Self.Active_Rule" Multiplicity="1" />
+          <End Role="Active_Record" Type="Self.Active_Record" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Active_Rule">
+              <PropertyRef Name="ActiveID" />
+            </Principal>
+            <Dependent Role="Active_Record">
+              <PropertyRef Name="ActiveID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ActiveRule_ActiveType">
+          <End Role="Active_Type" Type="Self.Active_Type" Multiplicity="1" />
+          <End Role="Active_Rule" Type="Self.Active_Rule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Active_Type">
+              <PropertyRef Name="Active_Type_ID" />
+            </Principal>
+            <Dependent Role="Active_Rule">
+              <PropertyRef Name="Active_Type_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Library_BookImgae_Library_Book">
+          <End Role="Library_Book" Type="Self.Library_Book" Multiplicity="1" />
+          <End Role="Library_BookImgae" Type="Self.Library_BookImgae" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Library_Book">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Library_BookImgae">
+              <PropertyRef Name="BookId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Conn" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Active_Record" EntityType="Self.Active_Record" />
+          <EntitySet Name="Active_Record_Items" EntityType="Self.Active_Record_Items" />
+          <EntitySet Name="Active_Rule" EntityType="Self.Active_Rule" />
+          <EntitySet Name="Active_Type" EntityType="Self.Active_Type" />
+          <EntitySet Name="Library_Book" EntityType="Self.Library_Book" />
+          <EntitySet Name="Library_BookImgae" EntityType="Self.Library_BookImgae" />
+          <EntitySet Name="Login_Log" EntityType="Self.Login_Log" />
+          <EntitySet Name="Login_User" EntityType="Self.Login_User" />
+          <AssociationSet Name="FK_Active_Record_Items_Active_Record" Association="Self.FK_Active_Record_Items_Active_Record">
+            <End Role="Active_Record" EntitySet="Active_Record" />
+            <End Role="Active_Record_Items" EntitySet="Active_Record_Items" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ActiveRecord_ActiveRule" Association="Self.FK_ActiveRecord_ActiveRule">
+            <End Role="Active_Rule" EntitySet="Active_Rule" />
+            <End Role="Active_Record" EntitySet="Active_Record" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ActiveRule_ActiveType" Association="Self.FK_ActiveRule_ActiveType">
+            <End Role="Active_Type" EntitySet="Active_Type" />
+            <End Role="Active_Rule" EntitySet="Active_Rule" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Library_BookImgae_Library_Book" Association="Self.FK_Library_BookImgae_Library_Book">
+            <End Role="Library_Book" EntitySet="Library_Book" />
+            <End Role="Library_BookImgae" EntitySet="Library_BookImgae" />
+          </AssociationSet>
+          <EntitySet Name="parameter" EntityType="Department.parameter" />
+        </EntityContainer>
+        <EntityType Name="parameter">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="chinese" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="English" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="parametertype" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DepartmentStoreContainer" CdmEntityContainer="Conn">
+          <EntitySetMapping Name="Active_Record">
+            <EntityTypeMapping TypeName="Department.Active_Record">
+              <MappingFragment StoreEntitySet="Active_Record">
+                <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+                <ScalarProperty Name="ActiveID" ColumnName="ActiveID" />
+                <ScalarProperty Name="Record_Information" ColumnName="Record_Information" />
+                <ScalarProperty Name="Record_Money" ColumnName="Record_Money" />
+                <ScalarProperty Name="Record_Date" ColumnName="Record_Date" />
+                <ScalarProperty Name="Statue" ColumnName="Statue" />
+                <ScalarProperty Name="Modify_Date" ColumnName="Modify_Date" />
+                <ScalarProperty Name="Account" ColumnName="Account" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Active_Record_Items">
+            <EntityTypeMapping TypeName="Department.Active_Record_Items">
+              <MappingFragment StoreEntitySet="Active_Record_Items">
+                <ScalarProperty Name="DetailsID" ColumnName="DetailsID" />
+                <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+                <ScalarProperty Name="Item_Detail_1" ColumnName="Item_Detail_1" />
+                <ScalarProperty Name="Item_Detail_2" ColumnName="Item_Detail_2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Active_Rule">
+            <EntityTypeMapping TypeName="Department.Active_Rule">
+              <MappingFragment StoreEntitySet="Active_Rule">
+                <ScalarProperty Name="ActiveID" ColumnName="ActiveID" />
+                <ScalarProperty Name="Active_Type_ID" ColumnName="Active_Type_ID" />
+                <ScalarProperty Name="Active_Name" ColumnName="Active_Name" />
+                <ScalarProperty Name="Active_Description" ColumnName="Active_Description" />
+                <ScalarProperty Name="Active_Condition" ColumnName="Active_Condition" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Gift" ColumnName="Gift" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Quantity_Total" ColumnName="Quantity_Total" />
+                <ScalarProperty Name="Quantity_Remaining" ColumnName="Quantity_Remaining" />
+                <ScalarProperty Name="Start_Date" ColumnName="Start_Date" />
+                <ScalarProperty Name="End_Date" ColumnName="End_Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Active_Type">
+            <EntityTypeMapping TypeName="Department.Active_Type">
+              <MappingFragment StoreEntitySet="Active_Type">
+                <ScalarProperty Name="Active_Type_ID" ColumnName="Active_Type_ID" />
+                <ScalarProperty Name="Active_Type_Name" ColumnName="Active_Type_Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Library_Book">
+            <EntityTypeMapping TypeName="Department.Library_Book">
+              <MappingFragment StoreEntitySet="Library_Book">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="BookLanguage" ColumnName="BookLanguage" />
+                <ScalarProperty Name="bookName" ColumnName="bookName" />
+                <ScalarProperty Name="BookType" ColumnName="BookType" />
+                <ScalarProperty Name="create_time" ColumnName="create_time" />
+                <ScalarProperty Name="summary" ColumnName="summary" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Library_BookImgae">
+            <EntityTypeMapping TypeName="Department.Library_BookImgae">
+              <MappingFragment StoreEntitySet="Library_BookImgae">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="BookId" ColumnName="BookId" />
+                <ScalarProperty Name="Image_Date" ColumnName="Image_Date" />
+                <ScalarProperty Name="Image_Path" ColumnName="Image_Path" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Login_Log">
+            <EntityTypeMapping TypeName="Department.Login_Log">
+              <MappingFragment StoreEntitySet="Login_Log">
+                <ScalarProperty Name="Rowid" ColumnName="Rowid" />
+                <ScalarProperty Name="LoginTime" ColumnName="LoginTime" />
+                <ScalarProperty Name="User_Rowid" ColumnName="User_Rowid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Login_User">
+            <EntityTypeMapping TypeName="Department.Login_User">
+              <MappingFragment StoreEntitySet="Login_User">
+                <ScalarProperty Name="Rowid" ColumnName="Rowid" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="LastLoginTime" ColumnName="LastLoginTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="parameter">
+            <EntityTypeMapping TypeName="Department.parameter">
+              <MappingFragment StoreEntitySet="parameter">
+                <ScalarProperty Name="parametertype" ColumnName="parametertype" />
+                <ScalarProperty Name="English" ColumnName="English" />
+                <ScalarProperty Name="chinese" ColumnName="chinese" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="無" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
