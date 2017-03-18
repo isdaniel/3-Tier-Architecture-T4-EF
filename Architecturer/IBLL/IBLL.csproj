@@ -52,6 +52,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>IBLLSessionExt.tt</DependentUpon>
     </Compile>
+    <Compile Include="IServiceFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

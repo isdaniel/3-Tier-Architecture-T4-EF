@@ -18,20 +18,6 @@ namespace Service_A
        public override void SetDAL(){
            dal =Active_RecordDAL.IActive_RecordDal;
        }
-        int IBaseBLL<Active_Record>.Create(Active_Record model)
-        {
-             return -1;
-        }
-
-        int IBaseBLL<Active_Record>.Delete(Active_Record Id)
-        {
-            return -1;
-        }
-
-        int IBaseBLL<Active_Record>.UpdateById(Active_Record Id)
-        {
-             return -1;
-        }
 	}
 
 	public partial class Active_Record_ItemsBLL : BaseBLL<Active_Record_Items>, IActive_Record_ItemsBLL
@@ -40,20 +26,6 @@ namespace Service_A
        public override void SetDAL(){
            dal =Active_Record_ItemsDAL.IActive_Record_ItemsDal;
        }
-        int IBaseBLL<Active_Record_Items>.Create(Active_Record_Items model)
-        {
-             return -1;
-        }
-
-        int IBaseBLL<Active_Record_Items>.Delete(Active_Record_Items Id)
-        {
-            return -1;
-        }
-
-        int IBaseBLL<Active_Record_Items>.UpdateById(Active_Record_Items Id)
-        {
-             return -1;
-        }
 	}
 
 	public partial class Active_RuleBLL : BaseBLL<Active_Rule>, IActive_RuleBLL
@@ -62,20 +34,6 @@ namespace Service_A
        public override void SetDAL(){
            dal =Active_RuleDAL.IActive_RuleDal;
        }
-        int IBaseBLL<Active_Rule>.Create(Active_Rule model)
-        {
-             return -1;
-        }
-
-        int IBaseBLL<Active_Rule>.Delete(Active_Rule Id)
-        {
-            return -1;
-        }
-
-        int IBaseBLL<Active_Rule>.UpdateById(Active_Rule Id)
-        {
-             return -1;
-        }
 	}
 
 	public partial class Active_TypeBLL : BaseBLL<Active_Type>, IActive_TypeBLL
@@ -84,20 +42,6 @@ namespace Service_A
        public override void SetDAL(){
            dal =Active_TypeDAL.IActive_TypeDal;
        }
-        int IBaseBLL<Active_Type>.Create(Active_Type model)
-        {
-             return -1;
-        }
-
-        int IBaseBLL<Active_Type>.Delete(Active_Type Id)
-        {
-            return -1;
-        }
-
-        int IBaseBLL<Active_Type>.UpdateById(Active_Type Id)
-        {
-             return -1;
-        }
 	}
 
 	public partial class Library_BookBLL : BaseBLL<Library_Book>, ILibrary_BookBLL
@@ -106,20 +50,6 @@ namespace Service_A
        public override void SetDAL(){
            dal =Library_BookDAL.ILibrary_BookDal;
        }
-        int IBaseBLL<Library_Book>.Create(Library_Book model)
-        {
-             return -1;
-        }
-
-        int IBaseBLL<Library_Book>.Delete(Library_Book Id)
-        {
-            return -1;
-        }
-
-        int IBaseBLL<Library_Book>.UpdateById(Library_Book Id)
-        {
-             return -1;
-        }
 	}
 
 	public partial class Library_BookImgaeBLL : BaseBLL<Library_BookImgae>, ILibrary_BookImgaeBLL
@@ -128,20 +58,6 @@ namespace Service_A
        public override void SetDAL(){
            dal =Library_BookImgaeDAL.ILibrary_BookImgaeDal;
        }
-        int IBaseBLL<Library_BookImgae>.Create(Library_BookImgae model)
-        {
-             return -1;
-        }
-
-        int IBaseBLL<Library_BookImgae>.Delete(Library_BookImgae Id)
-        {
-            return -1;
-        }
-
-        int IBaseBLL<Library_BookImgae>.UpdateById(Library_BookImgae Id)
-        {
-             return -1;
-        }
 	}
 
 	public partial class Login_LogBLL : BaseBLL<Login_Log>, ILogin_LogBLL
@@ -150,20 +66,6 @@ namespace Service_A
        public override void SetDAL(){
            dal =Login_LogDAL.ILogin_LogDal;
        }
-        int IBaseBLL<Login_Log>.Create(Login_Log model)
-        {
-             return -1;
-        }
-
-        int IBaseBLL<Login_Log>.Delete(Login_Log Id)
-        {
-            return -1;
-        }
-
-        int IBaseBLL<Login_Log>.UpdateById(Login_Log Id)
-        {
-             return -1;
-        }
 	}
 
 	public partial class Login_UserBLL : BaseBLL<Login_User>, ILogin_UserBLL
@@ -172,20 +74,6 @@ namespace Service_A
        public override void SetDAL(){
            dal =Login_UserDAL.ILogin_UserDal;
        }
-        int IBaseBLL<Login_User>.Create(Login_User model)
-        {
-             return -1;
-        }
-
-        int IBaseBLL<Login_User>.Delete(Login_User Id)
-        {
-            return -1;
-        }
-
-        int IBaseBLL<Login_User>.UpdateById(Login_User Id)
-        {
-             return -1;
-        }
 	}
 
 	public partial class parameterBLL : BaseBLL<parameter>, IparameterBLL
@@ -194,19 +82,5 @@ namespace Service_A
        public override void SetDAL(){
            dal =parameterDAL.IparameterDal;
        }
-        int IBaseBLL<parameter>.Create(parameter model)
-        {
-             return -1;
-        }
-
-        int IBaseBLL<parameter>.Delete(parameter Id)
-        {
-            return -1;
-        }
-
-        int IBaseBLL<parameter>.UpdateById(parameter Id)
-        {
-             return -1;
-        }
 	}
 }

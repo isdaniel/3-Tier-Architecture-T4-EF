@@ -49,9 +49,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{3D9F8149-22CF-48C8-A9CD-DB0ED13C8199}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DBSession\DALRepository.csproj">
       <Project>{f6b5df75-51ab-4338-a213-bc28b03625d7}</Project>
       <Name>DALRepository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DI\DI.csproj">
+      <Project>{6BC3A979-BDFA-4738-A53D-ACE30A48F0D3}</Project>
+      <Name>DI</Name>
     </ProjectReference>
     <ProjectReference Include="..\IBLL\IBLL.csproj">
       <Project>{ea8315b0-0ff3-4c15-886f-10a5bd67e9d7}</Project>

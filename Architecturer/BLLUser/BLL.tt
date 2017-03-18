@@ -40,20 +40,6 @@ namespace Service_A
        public override void SetDAL(){
            dal =<#=entity.Name#>DAL.I<#=entity.Name#>Dal;
        }
-        int IBaseBLL<<#=entity.Name#>>.Create(<#=entity.Name#> model)
-        {
-             return -1;
-        }
-
-        int IBaseBLL<<#=entity.Name#>>.Delete(<#=entity.Name#> Id)
-        {
-            return -1;
-        }
-
-        int IBaseBLL<<#=entity.Name#>>.UpdateById(<#=entity.Name#> Id)
-        {
-             return -1;
-        }
 	}
 <#}#>
 }

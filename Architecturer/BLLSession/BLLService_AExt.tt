@@ -27,19 +27,17 @@ namespace ServiceRepository
         <#foreach (EntityType entity in ItemCollection.GetItems<EntityType>().OrderBy(e => e.Name))
         {
         #>	
-            private I<#=entity.Name#>BLL i<#=entity.Name#>BLL=null;
-            public I<#=entity.Name#>BLL I<#=entity.Name#>BLL{
-                get
-                   {
-                        if(i<#=entity.Name#>BLL==null)
-                            i<#=entity.Name#>BLL=new <#=entity.Name#>BLL();
-                        return i<#=entity.Name#>BLL;
-                   }
-                set
-                   {
-                        i<#=entity.Name#>BLL=value;
-                   }
-            }
+        private I<#=entity.Name#>BLL i<#=entity.Name#>BLL=null;
+        public I<#=entity.Name#>BLL I<#=entity.Name#>BLL{
+           get{
+                if(i<#=entity.Name#>BLL==null)
+                    i<#=entity.Name#>BLL=new <#=entity.Name#>BLL();
+                return i<#=entity.Name#>BLL;
+              }
+           set{
+                i<#=entity.Name#>BLL=value;
+              }
+        }
         <#}#>	
     }
 

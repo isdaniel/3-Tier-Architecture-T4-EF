@@ -63,6 +63,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DI\DI.csproj">
+      <Project>{6BC3A979-BDFA-4738-A53D-ACE30A48F0D3}</Project>
+      <Name>DI</Name>
+    </ProjectReference>
     <ProjectReference Include="..\IDAL\IDAL.csproj">
       <Project>{7abc6c5a-f397-4c89-afe3-8881ee808f21}</Project>
       <Name>IDAL</Name>

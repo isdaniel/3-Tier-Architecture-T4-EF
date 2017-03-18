@@ -55,6 +55,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DALFakeData\DALFakeData.csproj">
+      <Project>{2c629c43-ec4b-4532-8ada-55c57b27973e}</Project>
+      <Name>DALFakeData</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DALMSSQL\DALMSSQL.csproj">
       <Project>{81eca120-1f55-4e3a-9ead-e7658dc55871}</Project>
       <Name>DALMSSQL</Name>

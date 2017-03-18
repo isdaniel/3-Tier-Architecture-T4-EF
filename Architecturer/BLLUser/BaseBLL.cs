@@ -1,4 +1,6 @@
-﻿using IDAL;
+﻿using Common;
+using DI;
+using IDAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Service_A
 {
-    public abstract class BaseBLL<T> : IBaseDAL<T> 
+    public abstract class BaseBLL<T> : IBaseDAL<T>
         where T : class, new()
     {
         protected IDAL.IBaseDAL<T> dal = null;
@@ -18,7 +20,7 @@ namespace Service_A
         /// <summary>
         /// 和IDALBase溝通
         /// </summary>
-        public IDBSession dbSession = null;
+        private IDBSession dbSession = null;
         public abstract void SetDAL();
         public void Create(T model) {
             dal.Create(model);

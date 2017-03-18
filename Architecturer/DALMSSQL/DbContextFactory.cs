@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DI;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -15,11 +16,11 @@ namespace DALMSSQL
         /// </summary>
         public static DbContext Create()
         {
-            DbContext dbContext = CallContext.GetData("DbContext") as DbContext;
+            DbContext dbContext = CallContext.GetData(typeof(DbContextFactory).Name) as DbContext;
             if (dbContext == null)
             {
                 dbContext = new Model.Conn();
-                CallContext.SetData("DbContext", dbContext);
+                CallContext.SetData(typeof(DbContextFactory).Name, dbContext);
             }
             return dbContext;
         }

@@ -13,13 +13,13 @@ namespace IBLL
     public interface IBaseBLL<T>
     {
         //定義方法
-        int Create(T model);
+        void Create(T model);
 
-        int Delete(T Id);
+        void Delete(T Id);
         
         IQueryable<T> GetList();
 
-        int UpdateById(T Id);
+        void UpdateById(T Id);
         int SaveChanges();
     }
 }
