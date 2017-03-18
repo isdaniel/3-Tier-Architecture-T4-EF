@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace IBLL
 {
-    public interface IServiceFactory
+    public interface IBLLFactory
     {
-        IBLLSession GetService();
+        IBLLSession GetBLLSession();
     }
 }

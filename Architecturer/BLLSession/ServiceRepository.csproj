@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BLLSession</RootNamespace>
-    <AssemblyName>BLLSession</AssemblyName>
+    <AssemblyName>ServiceRepository</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLLFactory.cs" />
     <Compile Include="BLLService_A.cs" />
     <Compile Include="BLLService_AExt.cs">
       <DependentUpon>BLLService_AExt.tt</DependentUpon>
@@ -56,6 +57,10 @@
     <ProjectReference Include="..\BLLUser\Service_A.csproj">
       <Project>{b119b498-4b23-411c-ac43-4e08dd85811a}</Project>
       <Name>Service_A</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{3D9F8149-22CF-48C8-A9CD-DB0ED13C8199}</Project>
+      <Name>Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\IBLL\IBLL.csproj">
       <Project>{ea8315b0-0ff3-4c15-886f-10a5bd67e9d7}</Project>

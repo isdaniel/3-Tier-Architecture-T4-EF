@@ -9,7 +9,8 @@ namespace Architecturer.UI
         static void Main(string[] args)
         {
             //在ui表現可以呼叫IBLL的Interface來呼叫 要執行哪一段BLL邏輯
-            IActive_RecordBLL container = new BLLService_A().IActive_RecordBLL;
+            var Dbsession = new BLLFactory().GetBLLSession();
+            var container = Dbsession.IActive_RecordBLL;
             foreach (var item in container.GetList())
             {
                 Console.WriteLine(item.Record_Date);

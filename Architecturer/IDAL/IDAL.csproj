@@ -52,6 +52,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="IDBSession.cs" />
+    <Compile Include="IFactoryDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

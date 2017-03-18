@@ -36,9 +36,8 @@ namespace Service_A
 
 	public partial class <#=entity.Name#>BLL : BaseBLL<<#=entity.Name#>>, I<#=entity.Name#>BLL
 	{
-       private IDBSession <#=entity.Name#>DAL = new DBSessionMSSQL();
        public override void SetDAL(){
-           dal =<#=entity.Name#>DAL.I<#=entity.Name#>Dal;
+           dal =DbSession.I<#=entity.Name#>Dal;
        }
 	}
 <#}#>

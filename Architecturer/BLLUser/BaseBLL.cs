@@ -21,6 +21,19 @@ namespace Service_A
         /// 和IDALBase溝通
         /// </summary>
         private IDBSession dbSession = null;
+
+        protected IDBSession DbSession {
+            get {
+                if (dbSession==null)
+                {
+                    dbSession = new DALRepository.FactoryDal().GetDbSession();
+                }
+                return dbSession;
+            }
+            set {
+                dbSession = value;
+            }
+        }
         public abstract void SetDAL();
         public void Create(T model) {
             dal.Create(model);
