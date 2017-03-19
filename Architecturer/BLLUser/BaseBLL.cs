@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Service_A
 {
-    public abstract class BaseBLL<T> : IBaseDAL<T>
+    public class BaseBLL<T> : IBaseDAL<T>
         where T : class, new()
     {
         protected IDAL.IBaseDAL<T> dal = null;
@@ -34,7 +34,7 @@ namespace Service_A
                 dbSession = value;
             }
         }
-        public abstract void SetDAL();
+        public virtual void SetDAL() { }
         public void Create(T model) {
             dal.Create(model);
         }
@@ -49,12 +49,6 @@ namespace Service_A
 
         public void UpdateById(T Id) {
             dal.UpdateById(Id);
-        }
-
-        public int SaveChanges()
-        {
-
-           return dal.SaveChanges();
         }
     }
 }

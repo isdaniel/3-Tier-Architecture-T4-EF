@@ -40,6 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DBSessionFakeData.cs" />
+    <Compile Include="DBSessionFakeDataExt.cs">
+      <DependentUpon>DBSessionFakeDataExt.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="DBSessionMSSQLExt.cs">
       <DependentUpon>DBSessionMSSQLExt.tt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -50,6 +56,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DBSessionFakeDataExt.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DBSessionFakeDataExt.cs</LastGenOutput>
+    </Content>
     <Content Include="DBSessionMSSQLExt.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>DBSessionMSSQLExt.cs</LastGenOutput>
@@ -79,9 +89,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

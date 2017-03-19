@@ -20,6 +20,6 @@ namespace IBLL
         IQueryable<T> GetList();
 
         void UpdateById(T Id);
-        int SaveChanges();
+
     }
 }

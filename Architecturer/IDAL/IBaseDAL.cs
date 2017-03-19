@@ -17,7 +17,5 @@ namespace IDAL
         void Create(T model);
         void UpdateById(T model);
         void Delete(T model);
-
-        int SaveChanges();
     }
 }

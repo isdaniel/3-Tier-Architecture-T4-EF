@@ -14,11 +14,13 @@ namespace DALMSSQL
         public void Create(T model)
         {
             dbContext.Set<T>().Add(model);
+            dbContext.SaveChanges();
         }
 
         public void Delete(T model)
         {
             dbContext.Set<T>().AddOrUpdate(model);
+            dbContext.SaveChanges();
         }
 
         public IQueryable<T> GetList()
@@ -34,6 +36,7 @@ namespace DALMSSQL
         public void UpdateById(T model)
         {
             dbContext.Set<T>().AddOrUpdate(model);
+            dbContext.SaveChanges();
         }
     }
 }

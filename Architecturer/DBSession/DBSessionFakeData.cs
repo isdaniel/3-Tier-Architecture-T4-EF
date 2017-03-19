@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DALFakeData
+namespace DALRepository
 {
-    public class FakeDAL
+    public partial class DBSessionFakeData
     {
     }
 }
