@@ -7,7 +7,7 @@
     <ProjectGuid>{5CCDCB21-861B-4C6D-B6A3-BFAC09311AFC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BLLSession</RootNamespace>
+    <RootNamespace>ServiceRepository</RootNamespace>
     <AssemblyName>ServiceRepository</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
