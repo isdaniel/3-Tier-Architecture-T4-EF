@@ -5,7 +5,7 @@
 
 說明:
 	UI層:此層可以是Console or .Net webForm or .Net Mvc...
-================================================================
+	
 	BLL層:
 		IBLL:宣告BLL層有哪些方法可以實現,給UI來呼叫
 			(1)IBaseBLL:簡單CURD方法給子類來實現
@@ -17,7 +17,7 @@
 		BLLRepository:創建BLL給外部來使用(類似實體工廠)
 			(1)BLLFactory:繼承IBLLFactory並實現裡面GetBLLSession方法,用抽象工廠方便日後更換邏輯模塊
 			(2)BLLService_A:繼承IBLLSession在此創建BLL類別
-================================================================
+			
 	DAL層:
 		IDAL:宣告DAL層有哪些方法可以實現,給BLL來呼叫
 			(1)IBaseIDAL:簡單CURD方法給子類來實現
@@ -28,7 +28,7 @@
 			(2)DAL:用t4模板繼承相對應名稱的介面
 		DALRepository:創建DAL給外部來使用(類似實體工廠)
 			(1)FactoryDal:繼承IFactoryDal並實現裡面GetDbSession方法,用抽象工廠方便日後更換讀取資料模塊
-================================================================	
+			
 	Infrastructure:
 		Model:裡面放置模組
 		DI:製作容器
