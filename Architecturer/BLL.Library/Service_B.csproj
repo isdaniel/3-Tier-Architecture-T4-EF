@@ -43,10 +43,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DBSession\DALRepository.csproj">
-      <Project>{f6b5df75-51ab-4338-a213-bc28b03625d7}</Project>
-      <Name>DALRepository</Name>
-    </ProjectReference>
     <ProjectReference Include="..\IBLL\IBLL.csproj">
       <Project>{ea8315b0-0ff3-4c15-886f-10a5bd67e9d7}</Project>
       <Name>IBLL</Name>

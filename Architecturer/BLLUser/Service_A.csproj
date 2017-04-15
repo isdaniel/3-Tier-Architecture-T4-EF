@@ -53,7 +53,7 @@
       <Project>{3D9F8149-22CF-48C8-A9CD-DB0ED13C8199}</Project>
       <Name>Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DBSession\DALRepository.csproj">
+    <ProjectReference Include="..\DALRepository\DALRepository.csproj">
       <Project>{f6b5df75-51ab-4338-a213-bc28b03625d7}</Project>
       <Name>DALRepository</Name>
     </ProjectReference>

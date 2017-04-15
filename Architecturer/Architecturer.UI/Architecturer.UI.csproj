@@ -62,8 +62,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BLLSession\ServiceRepository.csproj">
-      <Project>{5ccdcb21-861b-4c6d-b6a3-bfac09311afc}</Project>
+    <ProjectReference Include="..\BLLRepository\ServiceRepository.csproj">
+      <Project>{5CCDCB21-861B-4C6D-B6A3-BFAC09311AFC}</Project>
       <Name>ServiceRepository</Name>
     </ProjectReference>
     <ProjectReference Include="..\IBLL\IBLL.csproj">
