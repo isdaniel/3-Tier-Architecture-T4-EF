@@ -19,10 +19,10 @@ using Model;
 namespace IDAL
 {  
 
-	public partial interface IDBSession    
+	public partial interface IDBProvider    
     {<#foreach (EntityType entity in ItemCollection.GetItems<EntityType>().OrderBy(e => e.Name))
         { #>	 
-            I<#=entity.Name#>Dal I<#=entity.Name#>Dal{get;set;}
+            I<#=entity.Name#>Dal I<#=entity.Name#>Dal{get;}
         <#}#>	
     }
 

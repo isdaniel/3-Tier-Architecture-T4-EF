@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IDAL
+namespace DALRepository
 {
-    public partial interface IDBSession
+    public partial class FakeDataProvider
     {
     }
 }

@@ -41,8 +41,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IBaseDAL.cs" />
-    <Compile Include="IDALSessionExt.cs">
-      <DependentUpon>IDALSessionExt.tt</DependentUpon>
+    <Compile Include="IDBProviderExt.cs">
+      <DependentUpon>IDBProviderExt.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
@@ -51,7 +51,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="IDBSession.cs" />
+    <Compile Include="IDBProvider.cs" />
     <Compile Include="IFactoryDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -62,9 +62,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="IDALSessionExt.tt">
+    <Content Include="IDBProviderExt.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>IDALSessionExt.cs</LastGenOutput>
+      <LastGenOutput>IDBProviderExt.cs</LastGenOutput>
     </Content>
     <Content Include="IDAL.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

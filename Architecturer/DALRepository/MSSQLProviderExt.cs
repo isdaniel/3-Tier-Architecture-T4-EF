@@ -6,7 +6,7 @@ namespace DALRepository
     /*
         資料倉儲要類別實體由這邊拿
     */
-	public partial class DBSessionMSSQL : IDBSession
+	public partial class MSSQLProvider : IDBProvider
     {
         	
             private IActive_RecordDal iActive_Recorddal=null;
@@ -16,10 +16,6 @@ namespace DALRepository
                         if(iActive_Recorddal==null)
                             iActive_Recorddal=new Active_RecordDal();
                         return iActive_Recorddal;
-                   }
-                set
-                   {
-                        iActive_Recorddal=value;
                    }
             }
         	
@@ -31,10 +27,6 @@ namespace DALRepository
                             iActive_Record_Itemsdal=new Active_Record_ItemsDal();
                         return iActive_Record_Itemsdal;
                    }
-                set
-                   {
-                        iActive_Record_Itemsdal=value;
-                   }
             }
         	
             private IActive_RuleDal iActive_Ruledal=null;
@@ -44,10 +36,6 @@ namespace DALRepository
                         if(iActive_Ruledal==null)
                             iActive_Ruledal=new Active_RuleDal();
                         return iActive_Ruledal;
-                   }
-                set
-                   {
-                        iActive_Ruledal=value;
                    }
             }
         	
@@ -59,10 +47,6 @@ namespace DALRepository
                             iActive_Typedal=new Active_TypeDal();
                         return iActive_Typedal;
                    }
-                set
-                   {
-                        iActive_Typedal=value;
-                   }
             }
         	
             private ILibrary_BookDal iLibrary_Bookdal=null;
@@ -72,10 +56,6 @@ namespace DALRepository
                         if(iLibrary_Bookdal==null)
                             iLibrary_Bookdal=new Library_BookDal();
                         return iLibrary_Bookdal;
-                   }
-                set
-                   {
-                        iLibrary_Bookdal=value;
                    }
             }
         	
@@ -87,10 +67,6 @@ namespace DALRepository
                             iLibrary_BookImgaedal=new Library_BookImgaeDal();
                         return iLibrary_BookImgaedal;
                    }
-                set
-                   {
-                        iLibrary_BookImgaedal=value;
-                   }
             }
         	
             private ILogin_LogDal iLogin_Logdal=null;
@@ -100,10 +76,6 @@ namespace DALRepository
                         if(iLogin_Logdal==null)
                             iLogin_Logdal=new Login_LogDal();
                         return iLogin_Logdal;
-                   }
-                set
-                   {
-                        iLogin_Logdal=value;
                    }
             }
         	
@@ -115,10 +87,6 @@ namespace DALRepository
                             iLogin_Userdal=new Login_UserDal();
                         return iLogin_Userdal;
                    }
-                set
-                   {
-                        iLogin_Userdal=value;
-                   }
             }
         	
             private IparameterDal iparameterdal=null;
@@ -128,10 +96,6 @@ namespace DALRepository
                         if(iparameterdal==null)
                             iparameterdal=new parameterDal();
                         return iparameterdal;
-                   }
-                set
-                   {
-                        iparameterdal=value;
                    }
             }
         	

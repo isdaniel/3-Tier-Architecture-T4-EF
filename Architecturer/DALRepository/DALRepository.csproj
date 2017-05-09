@@ -40,29 +40,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DBSessionFakeData.cs" />
-    <Compile Include="DBSessionFakeDataExt.cs">
-      <DependentUpon>DBSessionFakeDataExt.tt</DependentUpon>
+    <Compile Include="FakeDataProvider.cs" />
+    <Compile Include="FakeDataProviderExt.cs">
+      <DependentUpon>FakeDataProviderExt.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="DBSessionMSSQLExt.cs">
-      <DependentUpon>DBSessionMSSQLExt.tt</DependentUpon>
+    <Compile Include="MSSQLProviderExt.cs">
+      <DependentUpon>MSSQLProviderExt.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="DBSessionMSSQL.cs" />
+    <Compile Include="MSSQLProvider.cs" />
     <Compile Include="FactoryDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DBSessionFakeDataExt.tt">
+    <Content Include="FakeDataProviderExt.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DBSessionFakeDataExt.cs</LastGenOutput>
+      <LastGenOutput>FakeDataProviderExt.cs</LastGenOutput>
     </Content>
-    <Content Include="DBSessionMSSQLExt.tt">
+    <Content Include="MSSQLProviderExt.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DBSessionMSSQLExt.cs</LastGenOutput>
+      <LastGenOutput>MSSQLProviderExt.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>

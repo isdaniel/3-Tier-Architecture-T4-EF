@@ -6,7 +6,7 @@ namespace DALRepository
     /*
         資料倉儲要類別實體由這邊拿
     */
-	public partial class DBSessionFakeData : IDBSession
+	public partial class FakeDataProvider : IDBProvider
     {
         	
             private IActive_RecordDal iActive_Recorddal=null;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DALRepository
 {
-    public partial class DBSessionMSSQL
+    public partial class MSSQLProvider
     {
     }
 }

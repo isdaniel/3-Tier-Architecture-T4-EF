@@ -1,18 +1,17 @@
-﻿using Common;
-using DI;
+﻿using DALRepository;
 using IDAL;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Service_A
 {
+    /// <summary>
+    /// 提供一個BLL Base有基本CURD功能
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class BaseBLL<T> : IBaseDAL<T>
         where T : class, new()
     {
-        protected IDAL.IBaseDAL<T> dal = null;
+        protected IBaseDAL<T> dal = null;
         public BaseBLL()
         {
             SetDAL();
@@ -20,18 +19,19 @@ namespace Service_A
         /// <summary>
         /// 和IDALBase溝通
         /// </summary>
-        private IDBSession dbSession = null;
+        private IDBProvider dbProvider = null;
 
-        protected IDBSession DbSession {
+        protected IDBProvider DBProvider
+        {
             get {
-                if (dbSession==null)
+                if (dbProvider == null)
                 {
-                    dbSession = new DALRepository.FactoryDal().GetDbSession();
+                    dbProvider = new FactoryDal().GetDbProvider();
                 }
-                return dbSession;
+                return dbProvider;
             }
             set {
-                dbSession = value;
+                dbProvider = value;
             }
         }
         public virtual void SetDAL() { }

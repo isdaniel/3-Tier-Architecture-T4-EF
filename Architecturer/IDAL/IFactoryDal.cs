@@ -8,6 +8,6 @@ namespace IDAL
 {
     public interface IFactoryDal
     {
-        IDBSession GetDbSession();
+        IDBProvider GetDbProvider();
     }
 }

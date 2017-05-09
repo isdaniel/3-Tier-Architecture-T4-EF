@@ -22,7 +22,7 @@ namespace DALRepository
     /*
         資料倉儲要類別實體由這邊拿
     */
-	public partial class DBSessionMSSQL : IDBSession
+	public partial class MSSQLProvider : IDBProvider
     {
         <#foreach (EntityType entity in ItemCollection.GetItems<EntityType>().OrderBy(e => e.Name))
         {
@@ -34,10 +34,6 @@ namespace DALRepository
                         if(i<#=entity.Name#>dal==null)
                             i<#=entity.Name#>dal=new <#=entity.Name#>Dal();
                         return i<#=entity.Name#>dal;
-                   }
-                set
-                   {
-                        i<#=entity.Name#>dal=value;
                    }
             }
         <#}#>	

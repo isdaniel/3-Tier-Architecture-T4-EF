@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using IDAL;
+﻿using IDAL;
 using Common;
 using System.Reflection;
 
 namespace DALRepository
 {
-    public class FactoryDal : IDAL.IFactoryDal
+    public class FactoryDal : IFactoryDal
     {
 
         /// <summary>
@@ -17,12 +12,12 @@ namespace DALRepository
         /// 可任意切換要使用的資料庫
         /// </summary>
         /// <returns></returns>
-        public IDBSession GetDbSession()
+        public IDBProvider GetDbProvider()
         {
             string DalFactory=ConfigHelper.GetConfig("DalFactory");
             string AssemblyName = ConfigHelper.GetConfig("DalAssemblyName");
             string ClassName = AssemblyName + "."+DalFactory;
-            return Assembly.Load(AssemblyName).CreateInstance(ClassName) as IDBSession;
+            return Assembly.Load(AssemblyName).CreateInstance(ClassName) as IDBProvider;
         }
     }
 }

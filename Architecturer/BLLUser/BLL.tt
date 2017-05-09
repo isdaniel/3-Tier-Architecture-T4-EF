@@ -37,7 +37,7 @@ namespace Service_A
 	public partial class <#=entity.Name#>BLL : BaseBLL<<#=entity.Name#>>, I<#=entity.Name#>BLL
 	{
        public override void SetDAL(){
-           dal =DbSession.I<#=entity.Name#>Dal;
+           dal =DBProvider.I<#=entity.Name#>Dal;
        }
 	}
 <#}#>
